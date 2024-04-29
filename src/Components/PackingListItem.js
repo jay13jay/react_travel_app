@@ -1,10 +1,10 @@
 
-function PackingListItem({item}) {
+function PackingListItem(props) {
     return (
-        <li key={item.id}>
-            <span style={item.packed ? {
+        <li key={props.item.key}>
+            <span style={props.item.packed ? {
                 textDecoration: 'line-through'} : {}}>
-                {item.quantity} {item.description}
+                {props.item.quantity} {props.item.description}
             </span>
             <button>❌</button>
         </li>

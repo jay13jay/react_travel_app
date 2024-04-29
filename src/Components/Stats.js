@@ -1,4 +1,4 @@
-import { useState } from "react";
+
 function Stats() {
     return (
         <footer className="stats">
