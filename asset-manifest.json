@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/jay13jay.github.io/react_travel_app/static/css/main.10a2aefb.css",
-    "main.js": "/jay13jay.github.io/react_travel_app/static/js/main.d2998061.js",
-    "index.html": "/jay13jay.github.io/react_travel_app/index.html",
-    "main.10a2aefb.css.map": "/jay13jay.github.io/react_travel_app/static/css/main.10a2aefb.css.map",
-    "main.d2998061.js.map": "/jay13jay.github.io/react_travel_app/static/js/main.d2998061.js.map"
+    "main.css": "/react_travel_app/static/css/main.10a2aefb.css",
+    "main.js": "/react_travel_app/static/js/main.d2998061.js",
+    "index.html": "/react_travel_app/index.html",
+    "main.10a2aefb.css.map": "/react_travel_app/static/css/main.10a2aefb.css.map",
+    "main.d2998061.js.map": "/react_travel_app/static/js/main.d2998061.js.map"
   },
   "entrypoints": [
     "static/css/main.10a2aefb.css",
