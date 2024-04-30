@@ -1,8 +1,8 @@
 
-function Stats() {
+function Stats({ items }) {
     return (
         <footer className="stats">
-            <em>you have X items on your list</em>
+            <em>you have { items.length } items on your list</em>
         </footer>
     )
 }

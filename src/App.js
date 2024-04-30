@@ -1,13 +1,35 @@
 import Logo from './Components/Logo';
 import Form from './Components/Form';
+import PackingList from './Components/PackingList';
 import Stats from './Components/Stats';
+import { useState } from 'react';
 
 function App() {
+  const [items, setItems] = useState([]);
+
+  function handleAddItems(item) {
+    setItems([...items, item]);
+  }
+  function handleDeleteItem(id) {
+    const newItems = items.filter(item => item.id !== id);
+    setItems(newItems);
+  }
+
+  function handlePackItem(id) {
+    const newItems = items.map(item => item.id === id ? 
+      {...item, packed: !item.packed} : item);
+      setItems(newItems);
+  }
+
   return (
     <>
       <Logo />
-      <Form />
-      <Stats />
+      <Form onAddItems={handleAddItems} items={items}/>
+      <PackingList 
+        items={items} 
+        onDeleteItem={handleDeleteItem}
+        onPackItem={handlePackItem} />
+      <Stats items={items}/>
     </>
   );
 }

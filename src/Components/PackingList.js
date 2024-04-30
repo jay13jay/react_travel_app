@@ -1,11 +1,15 @@
 import PackingListItem from "./PackingListItem";
 
-function PackingList(props) {
+function PackingList({ items, onDeleteItem, onPackItem }) {
     return (
         <div className="list">
             <ul>
-                {props.items.map((item) => (
-                    <PackingListItem key={item.id} item={item} />
+                {items.map((item) => (
+                    <PackingListItem 
+                        key={item.id} 
+                        item={item} 
+                        onDeleteItem={onDeleteItem}
+                        onPackItem={onPackItem }/>
                 ))}
             </ul>
         </div>

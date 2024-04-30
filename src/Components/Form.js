@@ -1,5 +1,5 @@
-import PackingList from "./PackingList";
 import { useState } from "react";
+
 
 // const initialItems = [
 //   { id: 1, description: "Passports", quantity: 2, packed: false },
@@ -7,8 +7,7 @@ import { useState } from "react";
 //   { id: 3, description: "Phone", quantity: 1, packed: true },
 // ];
 
-function Form() {
-    const [items, setItems] = useState([]);
+function Form({ onAddItems, items }) {
     const [description, setDescription] = useState("");
     const [quantity, setQuantity] = useState(1);
     
@@ -21,7 +20,7 @@ function Form() {
             description, 
             quantity, 
             packed: false };
-        setItems([...items, newItem]);
+        onAddItems(newItem);
         setDescription("");
         setQuantity(1);
     }
@@ -49,7 +48,6 @@ function Form() {
                     onChange={(e) => setDescription(e.target.value)} />
                 <button>Add</button>
             </form>
-            <PackingList items={items}/>
         </>
     )
 }

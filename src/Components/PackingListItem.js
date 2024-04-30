@@ -1,12 +1,17 @@
 
-function PackingListItem(props) {
+function PackingListItem({ item, onDeleteItem, onPackItem }) {
     return (
-        <li key={props.item.key}>
-            <span style={props.item.packed ? {
+        <li key={item.key}>
+            <input 
+                type="checkbox" 
+                checked={item.packed} 
+                value={item.packed}
+                onChange={() => onPackItem(item.id)}/>
+            <span style={item.packed ? {
                 textDecoration: 'line-through'} : {}}>
-                {props.item.quantity} {props.item.description}
+                {item.quantity} {item.description}
             </span>
-            <button>❌</button>
+            <button onClick={() => onDeleteItem(item.id)}>❌</button>
         </li>
     )
 }
