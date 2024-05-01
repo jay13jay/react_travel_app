@@ -1,19 +1,11 @@
 import { useState } from "react";
 
-
-// const initialItems = [
-//   { id: 1, description: "Passports", quantity: 2, packed: false },
-//   { id: 2, description: "Socks", quantity: 12, packed: false },
-//   { id: 3, description: "Phone", quantity: 1, packed: true },
-// ];
-
 function Form({ onAddItems, items }) {
     const [description, setDescription] = useState("");
     const [quantity, setQuantity] = useState(1);
     
     function handleSubmit(e) {
         e.preventDefault();
-        console.log(e)
         if (!description) return;
         const newItem = { 
             id: items.length + 1, 

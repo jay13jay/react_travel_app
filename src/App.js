@@ -15,6 +15,12 @@ function App() {
     setItems(newItems);
   }
 
+  function handleClearAll() {
+    const confirmed = window.confirm('Are you sure you want to delete all items?');
+    if (!confirmed) return;
+    setItems([]);
+  }
+
   function handlePackItem(id) {
     const newItems = items.map(item => item.id === id ? 
       {...item, packed: !item.packed} : item);
@@ -28,6 +34,7 @@ function App() {
       <PackingList 
         items={items} 
         onDeleteItem={handleDeleteItem}
+        onClearAll={handleClearAll}
         onPackItem={handlePackItem} />
       <Stats items={items}/>
     </>
